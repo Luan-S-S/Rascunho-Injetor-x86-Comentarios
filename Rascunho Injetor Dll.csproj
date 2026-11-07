@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RootNamespace>Rascunho_Injetor_Dll</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ControlProcess.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Open AssaultCube.bat" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\x86\Release\net9.0-windows\DllLdrLoadDll.dll" />
+    <None Include="bin\x86\Release\net9.0-windows\DllLoadA.dll" />
+    <None Include="bin\x86\Release\net9.0-windows\DllLoadW.dll" />
+    <None Include="bin\x86\Release\net9.0-windows\SeDebugPrivilegeDll.dll" />
+    <None Include="bin\x86\Release\net9.0-windows\UnHookDLL.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
